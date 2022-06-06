@@ -9,7 +9,7 @@ class questionItem:
         return 
 
 def main():
-  listOfQuestions = [questionItem(0, "Y"), questionItem(1, "Y"),questionItem(1, "X"), questionItem(1, "X"), questionItem(.75, "X"), questionItem(1, "X"), questionItem(1, "X"), questionItem(1, "Y")] 
+  listOfQuestions = [questionItem(3, "Y"), questionItem(1, "Y"),questionItem(.25, "X"), questionItem(.5, "X"), questionItem(.75, "X"), questionItem(1, "X"), questionItem(1, "X"), questionItem(.75, "Y")] 
   for i in range(0, len(listOfQuestions)):
     #listOfQuestions[i].print()
     print("\n")
@@ -45,9 +45,9 @@ def assignGrade():
         xypoint[0] = 2
     elif outputList[0] <.5:
         xypoint[0] = 3
-    if outputList[1] == .5/3:
+    if outputList[1] == 1/6:
         xypoint[1] = -1
-    elif outputList[1] > .5/3 and outputList[1] <= 1/3:
+    elif outputList[1] > 1/6 and outputList[1] <= 1/3:
         xypoint[1] = -2
     elif outputList[1] > 1/3 and outputList[1] <= .5:
         xypoint[1] = -3
@@ -57,7 +57,7 @@ def assignGrade():
         xypoint[1] = -5
     elif outputList[1] > 4/3 and outputList[1] <= 1.5:
         xypoint[1] = -6
-    elif outputList[1] > 1.5 and outputList <= 5/3:
+    else:
         xypoint[1] = -7
     # assigning xy to letters
     print('coordinates: ' , xypoint)
@@ -78,9 +78,9 @@ def assignGrade():
     elif xypoint[0] ==1 and xypoint[1] == -5 or xypoint[0] == 1 and xypoint[1]== -6:
         lettergrade = "F"
     elif xypoint[0] == 1 and xypoint[1] == -7:
-        lettergrade == "G"
+        lettergrade = "G"
     else:
-        lettergrade == "H"
+        lettergrade = "H"
     return lettergrade
 
 main()
